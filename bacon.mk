@@ -216,7 +216,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8974
+    power.bacon
 
 # Proprietary wifi display, if available
 ifneq ($(QCPATH),)
