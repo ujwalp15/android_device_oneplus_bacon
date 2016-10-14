@@ -23,3 +23,8 @@ ro.gps.agps_provider=1
 
 # cabl is handled by the panel
 ro.qualcomm.cabl=0
+
+# ADB at boot
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
