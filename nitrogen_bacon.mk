@@ -34,7 +34,7 @@ PRODUCT_MODEL := A0001
 
 PRODUCT_PACKAGES += \
     Launcher3 \
-    Camera2
+    SnapdragonCamera
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
