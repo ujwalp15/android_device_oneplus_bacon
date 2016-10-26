@@ -28,7 +28,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
@@ -88,15 +87,19 @@ static void init_alarm_boot_properties()
     }
 }
 
-static void import_kernel_nv(const std::string& key,
-        const std::string& value, bool for_emulator __attribute__((unused)))
+static void import_kernel_nv(char *name, int for_emulator)
 {
-    if (key.empty()) return;
+    char *value = strchr(name, '=');
+    int name_len = strlen(name);
 
-    if (key == "oppo.rf_version") {
-        property_set("ro.oppo.rf_version", value.c_str());
-    } else if (key == "oppo.pcb_version") {
-        property_set("ro.oppo.pcb_version", value.c_str());
+    if (value == 0) return;
+    *value++ = 0;
+    if (name_len == 0) return;
+
+    if (!strcmp(name,"oppo.rf_version")) {
+        property_set("ro.oppo.rf_version", value);
+    } else if (!strcmp(name,"oppo.pcb_version")) {
+        property_set("ro.oppo.pcb_version", value);
     }
 }
 
