@@ -214,13 +214,12 @@ static struct hw_module_methods_t power_module_methods = {
     .open = NULL,
 };
 
-void set_feature(__attribute__((unused)) struct power_module *module,
-		feature_t feature, int state)
+void set_feature(struct power_module *module, feature_t feature, int state)
 {
-    char tmp_str[64];
+    char tmp_str[NODE_MAX];
 #ifdef TAP_TO_WAKE_NODE
     if (feature == POWER_FEATURE_DOUBLE_TAP_TO_WAKE) {
-        snprintf(tmp_str, 64, "%d", state);
+        snprintf(tmp_str, NODE_MAX, "%d", state);
         sysfs_write(TAP_TO_WAKE_NODE, tmp_str);
     }
 #endif
