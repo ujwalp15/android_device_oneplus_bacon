@@ -50,7 +50,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := lightning_bacon_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_bacon_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8974
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-6.x/bin/arm-eabi-
 
