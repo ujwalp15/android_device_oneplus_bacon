@@ -21,17 +21,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from bacon device
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
-# Inherit some common Nitrogen OS stuff.
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+# Inherit some common Oct OS stuff.
+$(call inherit-product, vendor/to/config/common.mk)
 
-PRODUCT_NAME := nitrogen_bacon
+PRODUCT_NAME := to_bacon
 PRODUCT_DEVICE := bacon
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_MODEL := A0001
-
-PRODUCT_PACKAGES += \
-    Launcher3 \
-    Camera2
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
